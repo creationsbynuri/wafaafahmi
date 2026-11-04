@@ -318,6 +318,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 1 — Freitag',
     dateValue: '15.01.2027',
     modalLabel: '15. Januar 2027 – Lektion 1 & 2',
+    soldOut: true,
     lessons: [
       '1. Persönliche Voraussetzungen',
       '2. Rechtliche Rahmenbedingungen',
@@ -328,6 +329,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 2 — Montag',
     dateValue: '18.01.2027',
     modalLabel: '18. Januar 2027 – Lektion 3 & 4',
+    soldOut: true,
     lessons: [
       '3. Verkehrszeichen und Verkehrseinrichtungen',
       '4. Straßen-Verkehrssystem und seine Nutzung',
@@ -338,6 +340,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 3 — Dienstag',
     dateValue: '19.01.2027',
     modalLabel: '19. Januar 2027 – Lektion 5 & 6',
+    soldOut: true,
     lessons: [
       '5. Vorfahrt',
       '6. Verkehrsregelungen / Bahnübergänge',
@@ -348,6 +351,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 4 — Mittwoch',
     dateValue: '20.01.2027',
     modalLabel: '20. Januar 2027 – Lektion 7 & 8',
+    soldOut: true,
     lessons: [
       '7. Geschwindigkeit, Abstand und umweltschonende Fahrweise',
       '8. Andere Teilnehmer im Straßenverkehr – Besonderheiten und Verhalten',
@@ -358,6 +362,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 5 — Donnerstag',
     dateValue: '21.01.2027',
     modalLabel: '21. Januar 2027 – Lektion 9 & 10',
+    soldOut: true,
     lessons: [
       '9. Verkehrsverhalten bei Fahrmanövern, Verkehrsbeobachtung',
       '10. Ruhender Verkehr',
@@ -368,6 +373,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'Tag 6 — Freitag',
     dateValue: '22.01.2027',
     modalLabel: '22. Januar 2027 – Lektion 11 & 12',
+    soldOut: true,
     lessons: [
       '11. Verhalten in besonderen Situationen',
       '12. Lebenslanges Lernen / Folgen von Verstößen gegen Verkehrsvorschriften',
@@ -378,6 +384,7 @@ const courseDays: CourseDay[] = [
     dayLabel: 'PKW',
     dateValue: '25.01.2027',
     modalLabel: '25. Januar 2027 – PKW / Lektion B1 & B2',
+    soldOut: true,
     lessons: [
       'B1. Technische Bedingungen / umweltbewusster Umgang mit Kraftfahrzeugen',
       'B2. Fahren mit Solofahrzeugen und Zügen, Personen- und Güterbeförderung',
@@ -552,13 +559,9 @@ export default function Kurse() {
                   <p className="text-[#555555] text-sm">15.–25. Januar 2027 · 7 Kurstage · 14 Lektionen</p>
                 </div>
               </div>
-              <button
-                onClick={() => openModal('Komplettkurs', 'Komplettkurs – alle Termine (Januar)')}
-                className="w-full sm:w-auto flex-shrink-0 bg-[#8B0000] text-white font-bold uppercase px-6 py-3.5 rounded-xl hover:bg-[#B22222] transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm tracking-wide"
-              >
-                <CalendarCheck size={16} />
-                Komplettkurs buchen
-              </button>
+              <span className="w-full sm:w-auto flex-shrink-0 bg-gray-200 text-gray-500 font-bold uppercase px-6 py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm tracking-wide">
+                Ausgebucht
+              </span>
             </div>
           </div>
 
@@ -598,7 +601,7 @@ export default function Kurse() {
             <div className="flex items-center gap-2 mb-4 px-1">
               <BookOpen size={15} className="text-[#8B0000]" />
               <p className="text-xs font-bold uppercase tracking-widest text-[#555]">
-                Einzelne Tage buchen — Januar 2027
+                Einzelne Tage — Januar 2027
               </p>
             </div>
 
@@ -639,14 +642,20 @@ export default function Kurse() {
                         </ul>
                       </div>
                       <div className="flex-shrink-0 ml-auto">
-                        <button
-                          onClick={() => openModal(day.dateValue, day.modalLabel)}
-                          className="flex items-center justify-center gap-1.5 bg-[#1A1A1A] text-white text-[11px] sm:text-xs font-bold uppercase px-3.5 sm:px-5 py-2.5 rounded-lg hover:bg-[#8B0000] transition-all duration-200 tracking-wide"
-                        >
-                          <CalendarCheck size={12} />
-                          <span className="hidden xs:inline">Anmelden</span>
-                          <span className="xs:hidden">Buchen</span>
-                        </button>
+                        {day.soldOut ? (
+                          <span className="block text-[10px] sm:text-xs font-bold uppercase px-3.5 sm:px-5 py-2.5 rounded-lg bg-gray-200 text-gray-500 tracking-wide">
+                            Ausgebucht
+                          </span>
+                        ) : (
+                          <button
+                            onClick={() => openModal(day.dateValue, day.modalLabel)}
+                            className="flex items-center justify-center gap-1.5 bg-[#1A1A1A] text-white text-[11px] sm:text-xs font-bold uppercase px-3.5 sm:px-5 py-2.5 rounded-lg hover:bg-[#8B0000] transition-all duration-200 tracking-wide"
+                          >
+                            <CalendarCheck size={12} />
+                            <span className="hidden xs:inline">Anmelden</span>
+                            <span className="xs:hidden">Buchen</span>
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
