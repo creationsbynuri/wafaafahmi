@@ -78,7 +78,22 @@ export default function Datenschutz() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">7. Ihre Rechte</h2>
+              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">7. Fehlerüberwachung mit Sentry</h2>
+              <p className="text-[#555] leading-relaxed">
+                Damit diese Website technisch zuverlässig funktioniert, nutzen wir den Dienst Sentry der Functional Software, Inc.,
+                45 Fremont Street, 8th Floor, San Francisco, CA 94105, USA. Die Daten werden in einem Rechenzentrum in der EU
+                (Frankfurt am Main) verarbeitet. Tritt beim Aufruf der Website ein technischer Fehler auf, werden Angaben zu diesem
+                Fehler übermittelt, zum Beispiel die Fehlermeldung, die betroffene Seite, Browser, Betriebssystem und Gerätetyp sowie
+                der Zeitpunkt. Die Speicherung von IP-Adressen ist deaktiviert, Cookies werden nicht gesetzt. Rechtsgrundlage ist
+                unser berechtigtes Interesse an einer fehlerfreien und sicheren Website (Art. 6 Abs. 1 lit. f DSGVO). Die Fehlerdaten
+                werden spätestens nach 90 Tagen gelöscht. Mit Sentry besteht ein Vertrag über die Auftragsverarbeitung, der für eine
+                etwaige Übermittlung in die USA die EU-Standardvertragsklauseln einschließt. Weitere Informationen:{' '}
+                <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer" className="underline">sentry.io/privacy</a>.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">8. Ihre Rechte</h2>
               <p className="text-[#555] leading-relaxed mb-4">
                 Sie haben jederzeit das Recht:
               </p>
@@ -93,7 +108,7 @@ export default function Datenschutz() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">8. Beschwerderecht</h2>
+              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">9. Beschwerderecht</h2>
               <p className="text-[#555] leading-relaxed">
                 Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer
                 personenbezogenen Daten durch uns zu beschweren. Zuständige Aufsichtsbehörde ist der Hessische
@@ -102,7 +117,7 @@ export default function Datenschutz() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">9. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+              <h2 className="text-2xl font-black uppercase text-[#1A1A1A] mb-4">10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
               <p className="text-[#555] leading-relaxed">
                 Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025. Durch die
                 Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben
